@@ -5,9 +5,11 @@
 
 **Lista de temas** Público
 
-| Name | Grade |
+| Temas | DescriçiónGrade |
 |--------|---------|
-|1. PHP | C |
-|2. POO | B |
+|1. POO | PHP Orientado a objetos |
+|2. PDO | Ibjetos de datos en PHPB |
+|3. MVC | Modelo Vista Controlador |
+|4. FRMW| Laravel|
 
 ![Hollow](http://tinyurl.com/529eu4xc)
