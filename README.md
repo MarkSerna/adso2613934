@@ -10,4 +10,4 @@
 |1. PHP | C |
 |2. POO | B |
 
-![Hollow](http://tinyurl.com/3xed7dhn)
+![Hollow](http://tinyurl.com/529eu4xc)
