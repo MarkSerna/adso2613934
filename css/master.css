@@ -40,12 +40,36 @@ main{
                 border: 2px solid #fff;
                 background-color: #fff8;
                 border-radius: 4rem;
-                padding: 1rem;
                 width: 300px;
                 transition: all 0.3s ease-in;
                 &:is(:hover){
-                    background-color: #0C7FFF;
+                    background-color: #fffa;
                     transform: scale(1.02);
+                }
+                &:is(:hover) a span{
+                    background-color: #0007d1 !important;
+                    transform: scale(1.1) rotate(360deg);
+                }
+                
+                a:is(:link, :visited){
+                    align-items: center;
+                    display: flex;
+                    padding: 1rem;
+                    text-decoration: none;
+                    gap: 0.6rem;
+                    color: #0009;
+
+                    span{
+                        background-color: #0009;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        color: #fff9;
+                        height: 36px;
+                        transition: all 0.3s ease-in-out;
+                        width: 36px;
+                    }
                 }
             }
         }
