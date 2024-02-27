@@ -126,7 +126,7 @@
                         $sum->num1 = $_POST['n1'];
                         $sum->num2 = $_POST['n2'];
                         echo "La suma de {$sum->num1} y {$sum->num2} es: " . 
-                             $sum->getResult();
+                            $sum->getResult();
                     }
                 ?>
             </div>
