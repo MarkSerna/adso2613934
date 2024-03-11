@@ -15,11 +15,38 @@
             align-items: center;
             gap: 1rem;
             padding: 10px;
+        }
 
-            h2 {
-                margin: 0;
-            }
+        h2 {
+            margin: 0;
+        }
 
+        h3 {
+            color: white;
+        }
+
+        p {
+            color: white;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:hover {
+            background-color: #C017DB;
+        }
+
+        img {
+            display: block;
+            margin: 0 auto;
         }
     </style>
 </head>
@@ -47,7 +74,7 @@
                     protected $conx;
 
                     //Methods
-                    public function __construct($dbname,
+                    public function __construct($dbname= 'adso2613934',
                                                 $host="localhost", 
                                                 $user="root", 
                                                 $pass= ""){
@@ -58,16 +85,26 @@
                     }
                     public function connect(){
                         try {
-                            $this->conx= new PDO("mysql:host= $this->host; dbname=$this->dbname, $this->user, $this->pass");
+                            $this->conx= new PDO("mysql:host=$this->host;dbname=$this->dbname", $this->user, $this->pass);
                             if($this->conx){
-                                echo "sisas parce";
+                                echo "😜";
                             }
                         } catch (PDOException $e) {
                             echo "Error". $e->getMessage();
                         }
                     }
                     //Constructor
+
+                    public function getRecords() {
+                        $sql = "SELECT * FROM pokemons"; // Asegúrate de reemplazar 'tu_tabla' con el nombre real de tu tabla.
+                        $stmt = $this->conx->prepare($sql);
+                        $stmt->execute();
+                        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+                    }
+
+                    
                 }
+
                 class Pokemon extends DataBase {
 
                 }
@@ -75,9 +112,22 @@
                 $db = new Pokemon('adso2613934');
                 $db->connect();
 
+                $records = $db->getRecords();
 
+                echo "<table>";
+                echo "<tr><th><h3>Name</h3></th><th><h3>Type</h3></th><th><h3>Health</h3></th><th><h3>Image</h3></th></tr>";
+
+                foreach ($records as $record) {
+                    echo "<tr>";
+                    echo "<td><h3>{$record['name']}</h3></td>";
+                    echo "<td><h3>{$record['type']}</h3></td>";
+                    echo "<td><h3>{$record['health']}</h3></td>";
+                    echo "<td><img src='images/ico-pk.png' alt='Icono Pokémon' width='50' height='50'></td>";
+                    echo "</tr>";
+                }
+
+                echo "</table>";
             ?>
-
         </section>
     </main>
 </body>
