@@ -23,6 +23,7 @@
 
         h3 {
             color: white;
+            margin: 0;
         }
 
         p {
@@ -35,7 +36,7 @@
         }
 
         th, td {
-            padding: 8px;
+            padding: 15px;
             text-align: left;
             border-bottom: 1px solid #ddd;
         }
@@ -94,18 +95,15 @@
                         }
                     }
                     //Constructor
+                }
 
+                class Pokemon extends DataBase {
                     public function getRecords() {
                         $sql = "SELECT * FROM pokemons"; // Asegúrate de reemplazar 'tu_tabla' con el nombre real de tu tabla.
                         $stmt = $this->conx->prepare($sql);
                         $stmt->execute();
                         return $stmt->fetchAll(PDO::FETCH_ASSOC);
                     }
-
-                    
-                }
-
-                class Pokemon extends DataBase {
 
                 }
 
@@ -122,7 +120,7 @@
                     echo "<td><h3>{$record['name']}</h3></td>";
                     echo "<td><h3>{$record['type']}</h3></td>";
                     echo "<td><h3>{$record['health']}</h3></td>";
-                    echo "<td><img src='images/ico-pk.png' alt='Icono Pokémon' width='50' height='50'></td>";
+                    echo "<td><img src='images/ico-pk.png' alt='Icono Pokémon' width='40' height='40'></td>";
                     echo "</tr>";
                 }
 
