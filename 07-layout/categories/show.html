@@ -1,0 +1,77 @@
+<html lang="en">
+    <!DOCTYPE html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../css/reset.css" />
+        <link rel="stylesheet" href="../css/fonts.css" />
+        <link rel="stylesheet" href="../css/master.css" />
+        <title>Show Category</title>
+    </head>
+    <body>
+        <main class="show-game">
+            <header>
+                <a href="index.html" class="btn-back">
+                    <img src="../images/btn-back.png" alt="Back" class="arrow-back">
+                </a>
+                <img src="../images/dashboard.png" alt="" style="margin-top: 20px;">
+        
+                <svg class="btn-burger" viewBox="0 0 100 100" width="80">
+                    <path class="line top" d="m 70,33 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20" />
+                    <path class="line middle" d="m 70,50 h -40" />
+                    <path class="line bottom" d="m 30,67 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20" />
+                </svg>
+            </header>
+            <nav class="nav">
+                <figure class="avatar">
+                    <img class="mask" src="../images/profile-picture.png" alt="">
+                </figure>
+                <h2>Android 17</h2>
+                <h4>Admin</h4>
+                <menu>
+                    <a href='my-profile.html'>
+                        <img src="../images/profile-icon.png" alt="">
+                        My profile
+                    </a>
+                    <a href='catalogue.html'>
+                        <img src="../images/catalogue.png" alt="">
+                        Catalogue
+                    </a>
+                    <a href='index.html'>
+                        <img src="../images/logout.png" alt="">
+                        Logout
+                    </a>
+                </menu>
+            </nav>
+
+            <section>
+                <img src="../images/image-view.png" alt="Game">
+                <article>
+                    <div class="row">
+                        <div class="column">
+                            <h4>Category:</h4>
+                            <p>Survival</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="column">
+                            <h4>Description</h4>
+                            <p>
+                                Lorem ipsum dolor ist est Lorem ipsum dolor ist est Lorem ipsum dolor ist est Lorem ipsum dolor. Lorem ipsum dolor ist est Lorem ipsum dolor ist est Lorem ipsum dolor ist est Lorem ipsum dolor
+                            </p>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+        </main>
+
+        <script src="../js/jquery-3.7.1.min.js"></script>
+        <script>
+            $('header').on('click', '.btn-burger', function(){
+                $(this).toggleClass('active')
+                $('.nav').toggleClass('active')
+            })
+        </script>
+    </body>
+</html>
