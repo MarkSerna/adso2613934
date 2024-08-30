@@ -42,20 +42,25 @@
     <article class="module">
         <aside>
             <img class="icon" src="images/users.png" alt="">
-            <span class="rows">75 users.</span>
+            <span class="rows">
+                {{ App\Models\User::count() }} Rows
+            </span>
         </aside>
         <img class="title" src="images/title-module-users.svg" alt="">
         <a href="{{ url('users') }}">
             <img src="images/view-button.png" alt="View">
         </a>
+        </a>
     </article>
     <article class="module">
         <aside>
             <img class="icon" src="images/categories.png" alt="">
-            <span class="rows">250 categ.</span>
+            <span class="rows">
+                {{ App\Models\Category::count() }} categ.
+            </span>
         </aside>
         <img class="title" src="images/title-module-categories.svg" alt="">
-        <a href="categories/index.html">
+        <a href="{{ url('categories')}}">
             <img src="images/view-button.png" alt="View">
         </a>
     </article>

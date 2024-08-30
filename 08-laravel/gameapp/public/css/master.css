@@ -1091,7 +1091,72 @@ main.users {
             flex-direction: column;
             align-items: center;
             gap: 1rem;
+            
+            input {
+                border: none;
+                background: url(../images/ico-search.png) no-repeat 290px center,
+                            url(../images/btn-search.png) no-repeat center;
+                color: var(--color-first);
+                font-size: 30px;
+                font-weight: 400;
+                height: 100px;
+                outline: none;
+                text-indent: 1rem;
+                width: 348px;
+                padding-left: 20px;
+                padding-bottom: 10px;
+                
+                &::placeholder {
+                    color: var(--color-second);
+                    opacity: 0.5;
+                }
+            }
+
+            div.options {
+                display: flex;
+                gap: 0.8rem;
+            }
+            /* HTML: <div class="loader"></div> */
+            .loader {
+                width: 50px;
+                aspect-ratio: 1;
+                display: grid;
+                border: 4px solid #0000;
+                border-radius: 50%;
+                border-right-color: var(--color-third);
+                animation: l15 1s infinite linear;
+            }
+            .loader::before,
+            .loader::after {    
+                content: "";
+                grid-area: 1/1;
+                margin: 2px;
+                border: inherit;
+                border-radius: 50%;
+                animation: l15 2s infinite;
+            }
+            .loader::after {
+                margin: 8px;
+                animation-duration: 3s;
+            }
+
+
+
+            div#list {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
         }
+        
+
+        div.not-found {
+            color: var(--color-fourth);
+            font-weight: normal;
+        }
+
+        div.list
         a.add:is(:link, :visited) {
             color: var(--color-fourth);
             height: 60px;
@@ -1803,3 +1868,6 @@ main.add-game {
     }
 }
 
+@keyframes l15{ 
+    100%{transform: rotate(1turn)}
+}
